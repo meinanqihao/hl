@@ -1,0 +1,18 @@
+<H2>tabs<a href="https://angular-ui.github.io/bootstrap/">参考示例</a></H2>
+
+  <div uib-tabset  active="activeForm" vertical="true">
+    <div uib-tab index="0" heading="Form Tab">
+      <div ng-form name="nestedForm">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" required ng-model="model.name"/>
+        </div>
+      </div>
+    </div>
+    <div uib-tab index="1" heading="Tab One">
+      Some Tab Content
+    </div>
+    <div uib-tab index="2" heading="Tab Two">
+      More Tab Content
+    </div>
+  </div>

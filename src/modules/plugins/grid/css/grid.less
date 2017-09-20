@@ -1,0 +1,68 @@
+.grid-table{
+	position:relative;
+	.grid-thead{
+		overflow:hidden;
+		width:100%;
+		position:relative;
+		height:40px;
+		background-color:#F7FAFF;
+		border-top:1px solid #DADDE6;
+		border-bottom:1px solid #DADDE6;
+		table{
+			position:absolute;
+			top:9px;
+			left:0;
+		 	td{
+				text-align:center;
+				border-right:1px solid #DADDE6;
+				font-size:14px;
+				font-weight:bold;
+				color:#252a34;
+			}
+		}
+	}
+	.grid-body{
+		overflow:auto;
+		width:100%;
+		> h3{
+			text-align:center;
+		}
+		tr{
+			&.row-1{
+				background-color:#F7FAFF;
+			}
+			&:hover,
+			&.row-1:hover{
+				background-color:#EAF2FF;
+			}
+			td.body-info{
+				line-height:40px;
+				border-bottom:1px solid #E6E9F2;
+				> div{
+					white-space: nowrap;
+					overflow:hidden;
+					text-overflow: ellipsis;
+				}
+				a[name]{
+					margin-right:5px;
+					cursor:pointer;
+				}
+			}
+		}
+	}
+	.grid-tfoot{
+		height:40px;
+		>span{
+			line-height:40px;
+			float:right;
+			margin-right: 20px;
+			font{
+				margin:0 5px;
+			}
+		}
+		.pagination{
+			float:right;
+			margin:5px 0;
+		}
+	}
+}

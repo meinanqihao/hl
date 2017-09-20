@@ -1,0 +1,72 @@
+﻿<!--左侧导航栏-->
+<script type="text/ng-template" id="nodes_org.html">
+    <div  class="tree-node tree-node-content" style="text-indent:{{25*depth}}px;" 
+     ng-class="{'active':isLeftActive(item.active),'selected':item.isSelected}" ng-click="tree.treeClick(item,false)">
+        <span ng-if="item.items" ng-class="{'shareicon-pull-down':item.isOpen,'shareicon-pulldown-02':!item.isOpen}"
+         ng-click="tree.treeClick(item,true)"></span>
+        <span class="tree-text">{{item.orgName}}</span>
+    </div>
+    <ol class="angular-ui-tree-nodes"  ng-if="item.items!=null&&item.items.length>0" ng-init="mm=depth"  ng-class="{hidden: tree.isOpen(item.isOpen)}">
+        <li ng-repeat="item in item.items"  class="angular-ui-tree-nodes" ng-init="depth=mm+1" ng-include="'nodes_org.html'"></li>
+    </ol>
+</script>
+
+<div class="org-container" ng-controller="orgIndex">
+    <div class="left-org-tree">
+        <ol class="angular-ui-tree-nodes"  ng-model="orgList">
+            <li ng-repeat="item in orgList track by $index" class="angular-ui-tree-node" ng-init="depth=1" ng-include="'nodes_org.html'"></li>
+        </ol>
+    </div>
+    <div class="center-container">
+    	<div class="search-form form-inline form-group" ng-show="form.show()">
+    			<label class="col-sm-2">企业/车队</label>
+    			<div class="col-sm-3">
+	    			<input type="text" class="form-control" ng-model="form.data.orgName"/>
+	    		</div>
+    			<label class="col-sm-2">类型</label>
+    			<div class="col-sm-3">
+    				<div dict-select ng-model='form.data' dict-data="dictData.org_type"  dict-value-name="orgType">
+        		</div>
+    			</div>
+    			<div class="clearfix"></div>
+    			<label class="col-sm-2">会员管理单位</label>
+    			<div class="col-sm-3">
+	    			<input type="text" class="form-control" ng-model="form.data.unitName"/>
+	    		</div>
+	    		<label class="col-sm-4 btn-group">
+	    			<a class="btn btn-primary" ng-click="form.query()">查询</a>
+	    			<a class="btn" ng-click="form.reset()">重置</a>
+	    		</label>
+    	</div>
+    	<div class="clearfix"></div>
+    	<div class="button-bar">
+    		<a class="btn btn-primary" ng-click="openOrgDlg({create:true})">新增企业</a>
+    		<a class="btn btn-primary" ng-click="openDeptDlg({create:true})">新增车队</a>
+    		<a class="btn pull-right" ng-click="form.searchChange()">{{form.showSearch?"隐藏":"显示"}}查询</a>
+    	</div>
+    	<div grid-table style="padding:5px 20px;"
+    		 data-widths="100,200,120,150,100,150,100"
+    		 data-format='{"createDate":"date|yyyy-MM-dd"}'
+    		 data-text="orgCode,orgName,transValue.orgType_,unitName,province,createDate,op"
+    		 on-handle="gridRow(row)"
+    		 data-grid="gridObj(grid)"
+    		 data-outheight="59"
+    		 data-loadurl="{{orgGridUrl}}"
+    		 on-events="gridALink(name,item)">
+    		<table>
+					<tbody>
+						<tr>
+	  					<td>编号</td>
+	  					<td>企业/车队</td>
+	  					<td>类型</td>
+	  					<td>所属会员管理单位</td>
+	  					<td>所属省份</td>
+	  					<td>创建时间</td>
+	  					<td>操作</th>
+	  				</tr>
+					</tbody>
+				</table>
+    	</div>
+    	
+    </div>
+</div>

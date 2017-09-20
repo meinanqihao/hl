@@ -1,0 +1,128 @@
+﻿var urlMap = {
+	debug:{
+		login:"/dist/data/login.json",
+		"logout":"/dist/data/success.json",
+		menuList:"/dist/data/menu.json",
+		orgTree:"/dist/data/org.json",
+		"addOrg":"/dist/data/success.json",
+		"modifyOrg":"/dist/data/success.json",
+		queryMmUnit:"/dist/data/queryMM10.json",
+		queryOrg10:"/dist/data/queryOrg10.json",
+		queryOrg:"/dist/data/queryOrg.json",
+		addDept:"/dist/data/success.json",
+		delOrg:"/dist/data/success.json",
+		//首页查询车辆详细信息
+		queryVehicle:"/dist/data/vehicleList.json",
+		
+		fetchCarList:"/dist/data/carList.json",
+		dictUrl:"/dist/data/dict.json",
+		//轨迹查询
+		queryHistory:"/dist/data/history.json",
+		addVehicle:"/dist/data/success.json",
+		delVehicle:"/dist/data/success.json",
+		modifyVehicle:"/dist/data/success.json",
+		addDevice:"/dist/data/success.json",
+		modifyDevice:"/dist/data/success.json",
+		delDevice:"/dist/data/success.json",
+		vehiclePage:"/dist/data/vehiclePage.json",
+		orgPage:"/dist/data/orgPage.json",
+		devicePage:"/dist/data/devicePage.json",
+		alermPage:"/dist/data/alermPage.json",
+		toDoAlermList:"/dist/data/toDoAlermList.json",
+		doSingleAlerm:"/dist/data/success.json",
+		doSomeAlerm:"/dist/data/success.json",
+		fetLoginUser:"/dist/data/loginUserInfo.json",
+		changPwd:"/dist/data/success.json",
+		searchCar:"/dist/data/searchCar.json",
+		queryDevice10:"/dist/data/queryOrg10.json",
+		vehicleBind:"/dist/data/success.json",
+		vehicleUnBind:"/dist/data/success.json"
+	},
+	some:{
+		dictUrl:"/action/public/sys/dict/itmes/get",
+		addDept:"/action/org/dep/add",
+		"modifyOrg":"/action/org/modify",
+		queryOrg10:"/action/org/query/top10",
+		delOrg:"/action/org/del",
+		addOrg:"/action/org/company/add",
+		orgTree:"/action/org/all/query",
+		queryMmUnit:"/action/org/agent/query/top10",
+		addVehicle:"/action/vechile/add",
+		delVehicle:"/action/vechile/del",
+		modifyVehicle:"/action/vechile/modify",
+		addDevice:"/action/device/add",
+		vehiclePage:"/action/vechile/query",
+		modifyDevice:"/action/device/modify",
+		delDevice:"/action/device/del",
+		orgPage:"/action/org/query",
+		devicePage:"/action/device/query",
+		alermPage:"/action/monitor/alarm/history/query",
+		toDoAlermList:"/action/monitor/alarm/query",
+		login:"/action/sys/login/doLogin",
+		queryVehicle:"/action/monitor/location/query",
+		doSingleAlerm:"/action/monitor/alarm/confirm",
+		doSomeAlerm:"/action/monitor/alarm/batchconfirm",
+		fetLoginUser:"/action/sys/login/user-info/get",
+		changPwd:"/action/sys/user/login-pwd/modify",
+		searchCar:"/action/vechile/query/top10",
+		queryDevice10:"/action/device/top10",
+		vehicleBind:"/action/vechile/device/bind",
+		//轨迹查询
+		queryHistory:"/action/monitor/location/history/query",
+		vehicleUnBind:"/action/vechile/device/unbind"
+	},
+	release:{
+		menuList:"/action/sys/menu/query",
+		"modifyOrg":"/action/org/modify",
+		queryOrg10:"/action/org/query/top10",
+		login:"/action/sys/login/doLogin",
+		"logout":"/action/sys/login/doLogout",
+		menuList:"/action/sys/login/index/query",
+		orgTree:"/action/org/all/query",
+		addOrg:"/action/org/company/add",
+		delOrg:"/action/org/del",
+		queryMmUnit:"/action/org/agent/query/top10",
+		queryOrg:"/action/org/query",
+		addDept:"/action/org/dep/add",
+		queryVehicle:"/action/monitor/location/query",
+		
+		vehiclePage:"/action/vechile/query",
+		//轨迹查询
+		queryHistory:"/action/monitor/location/history/query",
+		dictUrl:"/action/public/sys/dict/itmes/get",
+		addVehicle:"/action/vechile/add",
+		delVehicle:"/action/vechile/del",
+		modifyVehicle:"/action/vechile/modify",
+		addDevice:"/action/device/add",
+		modifyDevice:"/action/device/modify",
+		delDevice:"/action/device/del",
+		orgPage:"/action/org/query",
+		devicePage:"/action/device/query",
+		alermPage:"/action/monitor/alarm/history/query",
+		toDoAlermList:"/action/monitor/alarm/query",
+		doSingleAlerm:"/action/monitor/alarm/confirm",
+		doSomeAlerm:"/action/monitor/alarm/batchconfirm",
+		fetLoginUser:"/action/sys/login/user-info/get",
+		changPwd:"/action/sys/user/login-pwd/modify",
+		searchCar:"/action/vechile/query/top10",
+		queryDevice10:"/action/device/top10",
+		vehicleBind:"/action/vechile/device/bind",
+		vehicleUnBind:"/action/vechile/device/unbind"
+	}
+}
+angular.extend(urlMap.debug,urlMap.some);
+var isDebug = true;
+/*
+*
+* key:["字段名",{type:,desc:}]
+*
+*/
+module.exports = {
+	getUrl:function(name){
+		var tmpUrlMap = isDebug?urlMap.debug:urlMap.release;
+		return tmpUrlMap[name];
+	},
+	isDebug:function(){
+		return isDebug;
+	}
+};

@@ -1,0 +1,27 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": {
+        "currentPage": 98, 
+        "pageTotal": 94, 
+        "pageSize": 54, 
+        "itemCount": 13, 
+        "list": [
+            {
+                "alermUuid": "mock", 
+                "plateNo": "mock", 
+                "simNo": "mock", 
+                "orgUuid": "mock", 
+                "orgName": "mock", 
+                "alarmTime": "mock", 
+                "alermDurationTime": 66, 
+                "contactsName": "mock", 
+                "contactsPhone": "mock", 
+                "alarmType": "mock", 
+                "alarmDetail": "mock", 
+                "version": 67
+            }
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+﻿{
+	"success":true,
+	"body":[
+		{
+			"entryCode":"org_type",
+			"items":[{"itemCode":"00","itemName":"组织类型1"}]
+		},
+		{
+			"entryCode":"vechile_type",
+			"items":[{"itemCode":"00","itemName":"车辆类型1"}]
+		},
+		{
+			"entryCode":"plate_color",
+			"items":[{"itemCode":"00","itemName":"黄色"}]
+		},
+		{
+			"entryCode":"industry",
+			"items":[{"itemCode":"00","itemName":"A行业"}]
+		},
+		{
+			"entryCode":"alarm_type",
+			"items":[{"itemCode":"00","itemName":"待处理"}]
+		}
+	]
+}

@@ -1,0 +1,21 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": [
+        {
+            "vechileUuid": "mock", 
+            "plateNo": "浙A00001", 
+            "companyName": "mock", 
+            "longitude": 120153683, 
+            "latitude": 30284661, 
+            "alermComments": "mock", 
+            "plateUuid": "mock", 
+            "contactsName": "mock", 
+            "contactsPhone": "mock", 
+            "lastReportTime": 50, 
+            "vechileType": "mock", 
+            "vechileType_": "mock"
+        }
+    ]
+}

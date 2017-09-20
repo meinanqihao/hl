@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'BeiDou';
+  src:  url('fonts/BeiDou.eot?4ledr3');
+  src:  url('fonts/BeiDou.eot?4ledr3#iefix') format('embedded-opentype'),
+    url('fonts/BeiDou.ttf?4ledr3') format('truetype'),
+    url('fonts/BeiDou.woff?4ledr3') format('woff'),
+    url('fonts/BeiDou.svg?4ledr3#BeiDou') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="beidou-"], [class*=" beidou-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'BeiDou' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.beidou-end:before {
+  content: "\e900";
+}
+.beidou-enlarge:before {
+  content: "\e901";
+}
+.beidou-fullscreen:before {
+  content: "\e902";
+}
+.beidou-Location:before {
+  content: "\e903";
+}
+.beidou-measure:before {
+  content: "\e904";
+}
+.beidou-narrow:before {
+  content: "\e905";
+}
+.beidou-play:before {
+  content: "\e906";
+}
+.beidou-speed-reduction:before {
+  content: "\e907";
+}
+.beidou-speed-up:before {
+  content: "\e908";
+}
+.beidou-suspend:before {
+  content: "\e909";
+}
+.beidou-Vehicle-location:before {
+  content: "\e90b";
+}
+.beidou-info-managment:before {
+  content: "\e90a";
+}

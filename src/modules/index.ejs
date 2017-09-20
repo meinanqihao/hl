@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>北斗后台管理系统</title>
+  <base href="/dist/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <script type="text/javascript" src="libs/js/bluebird.min.js"></script>
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="libs/js/es5-shim.min.js"></script>
+  <script type="text/javascript" src="libs/js/es5-sham.min.js"></script>
+  <script type="text/javascript" src="libs/js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="libs/js/html5shiv.min.js"></script>
+  <script type="text/javascript" src="libs/js/respond.min.js"></script>
+  <style>
+    .ng-hide {
+      display: none !important;
+    }
+  </style>
+  <![endif]-->
+  <link type="text/css" rel="stylesheet" href="libs/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="libs/css/ui-bootstrap-csp.css"/>
+  <link type="text/css" rel="stylesheet" href="libs/css/angular-ui-tree.css"/>
+  <link type="text/css" rel="stylesheet" href="libs/css/select.min.css"/>
+  <link type="text/css" rel="stylesheet" href="libs/css/share/style.css"/>
+  <link type="text/css" rel="stylesheet" href="libs/css/map/style.css"/>
+  <script type="text/javascript" src="libs/js/angular.js"></script>
+  <script type="text/javascript" src="libs/js/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="libs/js/ui-bootstrap-tpls.js"></script>
+  <script type="text/javascript" src="libs/js/select.min.js"></script>
+  <script type="text/javascript" src="libs/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=e653b1899e5c1257f73d486e53249833"></script>
+  <script type="text/javascript">
+    window.onerror =  function handleErr(msg,url,l){
+      console.log(msg);
+    }
+
+  </script>
+</head>
+<body class="beidou-app">
+<div toaster-container ></div>
+<div toaster-container toaster-options="{'toaster-id': 1,  'close-button': true,   'position-class': 'toast-center'}"></div>
+<div toaster-container toaster-options="{'toaster-id': 2,'position-class': 'toast-top-center'}"></div>
+<div toaster-container toaster-options="{'toaster-id': 3,'position-class': 'toast-center'}"></div>
+<div ui-view></div>
+</body>
+</html>

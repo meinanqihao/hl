@@ -1,0 +1,61 @@
+﻿<div class="vechile-container" ng-controller="vechileIdx">
+    <div class="center-container">
+    	<div class="search-form form-inline form-group" ng-show="form.show()">
+	    		<label class="col-sm-2">车牌号</label>
+    			<div class="col-sm-2">
+	    			<input type="text" class="form-control" ng-model="form.data.plateNo"/>
+	    		</div>
+    			<label class="col-sm-2">车辆类型</label>
+    			<div class="col-sm-2">
+    				<div dict-select ng-model='form.data' dict-data="dictData.vechile_type"  dict-value-name="vechileType">
+        		</div>
+    			</div>
+    			<label class="col-sm-2">所属企业</label>
+    			<div class="col-sm-2">
+	    			<input type="text" class="form-control" ng-model="form.data.orgName"/>
+	    		</div>
+    			<div class="clearfix"></div>
+    			<label class="col-sm-2">所属地区</label>
+    			<div class="col-sm-2">
+    				<div area-select class="area-select-input" ng-model="form.data"></div>
+	    		</div>
+	    		<label class="col-sm-4 btn-group">
+	    			<a class="btn btn-primary" ng-click="form.query()">查询</a>
+	    			<a class="btn" ng-click="form.reset()">重置</a>
+	    		</label>
+    	</div>
+    	<div class="clearfix"></div>
+    	<div class="button-bar">
+    		<a class="btn btn-primary" ng-click="openVechileDlg()">新增车辆</a>
+    		<a class="btn" ng-click="openRelationDlg()">关联设备</a>
+    		<a class="btn" ng-click="clearRelation()">解绑设备</a>
+    		<a class="btn pull-right" ng-click="form.searchChange()">{{form.showSearch?"隐藏":"显示"}}查询</a>
+    	</div>
+    	<div grid-table style="padding:5px 20px;"
+    		 data-widths="40,150,100,200,150,150,250,100,100"
+    		 data-text="radio,plateNo,transValue.vechileType_,transValue.orgUuid_,province,contactsName,contactsPhone,createDate,op"
+    		 on-handle="gridRow(row)"
+    		 data-format='{"createDate":"date|yyyy-MM-dd"}'
+    		 data-grid="gridObj(grid)"
+    		 data-outheight="148"
+    		 data-loadurl="{{vehiclePageUrl}}"
+    		 on-events="gridALink(name,item)">
+    		<table>
+					<tbody>
+						<tr>
+	  					<td></td>
+	  					<td>车牌号</td>
+	  					<td>车辆类型</td>
+	  					<td>所属企业</td>
+	  					<td>所属省份</td>
+	  					<td>联系人</td>
+	  					<td>手机号</td>
+	  					<td>创建日期</td>
+	  					<td>操作</th>
+	  				</tr>
+					</tbody>
+				</table>
+    	</div>
+    	
+    </div>
+</div>

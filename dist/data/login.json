@@ -1,0 +1,26 @@
+﻿{
+    "retObj": {
+        "success": true, 
+        "errMsg": "mock", 
+        "errCode": "mock", 
+        "body": {
+            "userCode": "mock", 
+            "loginName": "曾孝", 
+            "memberType": {
+                "code": "mock", 
+                "text": "mock", 
+                "name": "mock"
+            }, 
+            "memberClassifyEnum": {
+                "code": "mock", 
+                "text": "mock", 
+                "name": "mock"
+            }, 
+            "userTypeEnum": {
+                "code": "mock", 
+                "test": "mock", 
+                "name": "mock"
+            }
+        }
+    }
+}

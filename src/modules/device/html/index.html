@@ -1,0 +1,66 @@
+﻿<div class="device-container" ng-controller="deviceIdx">
+    <div class="center-container">
+    	<div class="search-form form-inline form-group" ng-show="form.show()">
+    			<label class="col-sm-1">终端型号</label>
+    			<div class="col-sm-2">
+	    			<input type="text" class="form-control" ng-model="form.data.terminalModelNo"/>
+	    		</div>
+    			<label class="col-sm-1">卡号</label>
+    			<div class="col-sm-2">
+    				<input type="text" class="form-control" ng-model="form.data.simNo"/>
+    			</div>
+    			<label class="col-sm-2">终端制造商</label>
+    			<div class="col-sm-2">
+	    			<input type="text" class="form-control" ng-model="form.data.manufactureId"/>
+	    		</div>
+	    		<div class="clearfix"></div>
+    			<label class="col-sm-1">车牌号</label>
+    			<div class="col-sm-2">
+	    			<input type="text" class="form-control" ng-model="form.data.plateNo"/>
+	    		</div>
+    			<label class="col-sm-1">所属企业</label>
+    			<div class="col-sm-2">
+	    			<input type="text" class="form-control" ng-model="form.data.orgName"/>
+	    		</div>
+    			<label class="col-sm-2">所属地区</label>
+    			<div class="col-sm-2">
+  					<div area-select class="area-select-input" ng-model="form.data" area-param-names="province:city:county"></div>
+	    		</div>
+    		<label class="col-sm-2 btn-group">
+    			<a class="btn btn-primary" ng-click="form.query()">查询</a>
+    			<a class="btn" ng-click="form.reset()">重置</a>
+    		</label>
+    	</div>
+    	
+    	<div class="button-bar">
+    		<a class="btn btn-primary" ng-click="openDeviceDlg()">新增设备</a>
+    		<a class="btn pull-right" ng-click="form.searchChange()">{{form.showSearch?"隐藏":"显示"}}查询</a>
+    	</div>
+    	<div grid-table style="padding:5px 20px;"
+    		 data-widths="150,150,150,150,150,150,100,100,100"
+    		 data-text="terminalId,terminalModelNo,simNo,transValue.manufactureId_,plateNo,orgName,province,createDate,op"
+    		 on-handle="gridRow(row)"
+    		 data-format='{"createDate":"date|yyyy-MM-dd"}'
+    		 data-grid="gridObj(grid)"
+    		 data-outheight="148"
+    		 data-loadurl="{{devicePageUrl}}"
+    		 on-events="gridALink(name,item)">
+    		<table>
+					<tbody>
+						<tr>
+	  					<td>终端编号</td>
+	  					<td>终端型号</td>
+	  					<td>卡号</td>
+	  					<td>终端制造商</td>
+	  					<td>车牌号</td>
+	  					<td>所属企业</td>
+	  					<td>所属省份</th>
+	  					<td>创建时间</th>
+	  					<td>操作</th>
+	  				</tr>
+					</tbody>
+				</table>
+    	</div>
+    	
+    </div>
+</div>

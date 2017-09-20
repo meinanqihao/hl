@@ -1,0 +1,17 @@
+<H1>这是工具方法的示例</H1>
+<div class="demo-comment-info">
+    用法：<br>
+    1. var toaster = require("../../common/toaster.js"); //这里需要是相对当前文件的路径<br>
+    2. toaster.success('这是提示的信息'); 或者： toaster.success("标题",'这是提示的信息');
+       支持 success,info,warning,error 四种写法。
+
+</div>
+<input type="button" ng-click="showSuccessMsg();" class="btn btn-success" value="success">
+<input type="button" ng-click="showInfoMsg();" class="btn btn-info" value="info">
+<input type="button" ng-click="showErrorMsg();" class="btn btn-danger" value="error">
+<input type="button" ng-click="showWarningMsg();" class="btn btn-warning" value="warning">
+<input type="button" ng-click="showConfirmMsg();" class="btn btn-warning" value="confirm">
+<br/>
+<br/>
+<br/>
+<div text-angular ng-model="testText"></div>

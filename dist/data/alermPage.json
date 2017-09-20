@@ -1,0 +1,32 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": {
+        "currentPage": 57, 
+        "pageTotal": 76, 
+        "pageSize": 6, 
+        "itemCount": 24, 
+        "list": [
+            {
+                "alermUuid": "mock", 
+                "plateNo": "mock", 
+                "simNo": "mock", 
+                "orgUuid": "mock", 
+                "orgName": "mock", 
+                "contactsName": "mock", 
+                "contactsPhone": "mock", 
+                "alarmType": "mock", 
+                "alarmDetail": "mock", 
+                "alarmStatus": "mock", 
+                "disposeInfo": "mock", 
+                "disposeUser": "mock", 
+                "alarmTime": 30, 
+                "alarmEndTime": 88, 
+                "alermDurationTime": 94, 
+                "disposeTime": "mock", 
+                "version": 72
+            }
+        ]
+    }
+}

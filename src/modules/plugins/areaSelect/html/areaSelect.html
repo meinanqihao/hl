@@ -1,0 +1,38 @@
+<input class="city-picker-input" ng-value="ngModel[provinceName] + ngModel[cityName] + ngModel[countyName]" type="text" ng-click="areaSelectClick();" placeholder="请选择省市区" readonly >
+
+
+<div class="city-picker-dropdown" ng-show="showAreaSelect">
+	<div class="city-select-wrap">
+		<div class="city-select-tab">
+			<a ng-class="activeTab=='province' ? 'active' : ''" ng-click="showProvinceTab();">省</a>
+      <a ng-class="activeTab=='city' ? 'active' : ''" ng-click="showCityTab();">市</a>
+      <a ng-show="needCounty" ng-class="activeTab=='county' ? 'active' : ''" ng-click="showCountyTab();">区</a>
+		</div>
+		<div class="city-select-content">
+			<div class="city-select province" ng-show="activeTab=='province' ? true : false">
+				<dl class="clearfix" ng-repeat="provinces in cities.provinces">
+					<dt once-text="provinces.key"></dt>
+					<dd>
+						<a ng-repeat="province in provinces.list" ng-click="selectProvince(this);" once-title="province" once once-attr-code="province" once-text="province"></a>
+					</dd>
+				</dl>
+			</div>
+			<div class="city-select city" ng-show="activeTab=='city' ? true : false">
+        <dl class="clearfix" ng-repeat="oneKeyCity in cities.cities">
+					<dt once-text="oneKeyCity.key"></dt>
+					<dd>
+						<a ng-repeat="city in oneKeyCity.list" ng-click="selectCity(this);" once-title="city" once once-attr-code="city" once-text="city"></a>
+					</dd>
+				</dl>
+			</div>
+			<div class="city-select district" ng-show="activeTab=='county' ? true : false">
+        <dl class="clearfix" ng-show="needCounty" ng-repeat="oneKeyCounty in cities.counties">
+					<dt once-text="oneKeyCounty.key"></dt>
+					<dd>
+						<a ng-repeat="county in oneKeyCounty.list" ng-click="selectCounty(this);" once-title="county" once once-attr-code="county" once-text="county"></a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>

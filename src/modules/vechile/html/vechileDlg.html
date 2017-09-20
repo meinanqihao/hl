@@ -1,0 +1,61 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{title}}车辆</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="form-inline form-group">
+  			<label class="col-sm-2">车牌号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="vechile.plateNo"/>
+  			</div>
+  			<label class="col-sm-2">车牌颜色</label>
+  			<div class="col-sm-4">
+  				<div dict-select ng-model='vechile' dict-data="dictData.plate_color"  dict-value-name="plateColor">
+        	</div>
+  			</div>
+  			<label class="col-sm-2">车辆类型</label>
+  			<div class="col-sm-4">
+  				<div dict-select ng-model='vechile' dict-data="dictData.vechile_type"  dict-value-name="vechileType"></div>
+  			</div>
+  			<label class="col-sm-2">发动机号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="vechile.engineNo"/>
+  			</div>
+  			<label class="col-sm-2">VIN号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="vechile.vinNo"/>
+  			</div>
+  			<label class="col-sm-2">车籍地</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="vechile.vechileLocation"/>
+  			</div>
+  			<label class="col-sm-2">车架编号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="vechile.carframeNo"/>
+  			</div>
+  			<label class="col-sm-2">所属企业</label>
+  			<div class="col-sm-4">
+  				<input type="text" typeahead-append-to-body="true"
+				 		uib-typeahead="mm as mm.orgNamePath for mm in searchOrg($viewValue)"  class="form-control" ng-model="org"/>
+  			</div>
+  			<label class="col-sm-2">所属行业</label>
+  			<div class="col-sm-4">
+  				<div dict-select ng-model='vechile' dict-data="dictData.industry"  dict-value-name="industry"></div>
+  			</div>
+  			<label class="col-sm-2">所属省份</label>
+  			<div class="col-sm-4">
+  				<div area-select class="area-select-input" ng-model="vechile" area-param-names="province:city:county"></div>
+  			</div>
+  			<label class="col-sm-2">联系人</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="vechile.contactsName"/>
+  			</div>
+  			<label class="col-sm-2">手机号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="vechile.contactsPhone"/>
+  			</div>
+  	</div>
+</div>
+<div class="modal-footer">
+    <button class="btn" ng-click="cancel()">取消</button>
+    <button class="btn btn-primary" ng-click="ok()">确认</button>
+</div>

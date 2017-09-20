@@ -1,0 +1,29 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": {
+        "currentPage": 25, 
+        "pageTotal": 32, 
+        "pageSize": 97, 
+        "itemCount": 43, 
+        "list": [
+            {
+                "plateNo": "mock", 
+                "vechileUuid": "mock", 
+                "plateColor": "mock", 
+                "vechileType": "mock", 
+                "engineNo": "mock", 
+                "carframeNo": "mock", 
+                "province": "mock", 
+                "city": "mock", 
+                "county": "mock", 
+                "contactsName": "mock", 
+                "contactsPhone": "mock", 
+                "vechileLocation": "mock", 
+                "createTime": "mock", 
+                "version": "mock"
+            }
+        ]
+    }
+}

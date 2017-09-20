@@ -1,0 +1,24 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{dept.title}}车队</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="form-inline form-group">
+  			<label class="col-sm-2">车队编号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="dept.orgCode"/>
+  			</div>
+  			<label class="col-sm-2">车队名称</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="dept.orgName"/>
+  			</div>
+  			<label class="col-sm-2">所属企业</label>
+  			<div class="col-sm-4">
+  				<input type="text" typeahead-append-to-body="true"
+				 uib-typeahead="mm as mm.orgName for mm in searchOrg($viewValue)"  class="form-control" ng-model="org"/>
+  			</div>
+  	</div>
+</div>
+<div class="modal-footer">
+    <button class="btn" ng-click="cancel()">取消</button>
+    <button class="btn btn-primary" ng-click="ok()">确认</button>
+</div>

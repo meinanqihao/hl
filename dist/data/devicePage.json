@@ -1,0 +1,27 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": {
+        "currentPage": 66, 
+        "pageTotal": 23, 
+        "pageSize": 87, 
+        "itemCount": 14, 
+        "list": [
+            {
+                "orgName": "mock", 
+                "simNo": "mock", 
+                "plateNo": "mock", 
+                "province": "mock", 
+                "city": "mock", 
+                "county": "mock", 
+                "manufactureId": "mock", 
+                "manufactureId_": "mock", 
+                "terminalModelNo": "mock", 
+                "terminalId": "mock", 
+                "deviceUuid": "mock", 
+                "version": 41
+            }
+        ]
+    }
+}

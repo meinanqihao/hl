@@ -1,0 +1,10 @@
+﻿{
+    "retObj": {
+        "success": true, 
+        "errMsg": "mock", 
+        "errCode": "mock", 
+        "body": { }, 
+        "errSerious": true, 
+        "newSessionId": "mock"
+    }
+}

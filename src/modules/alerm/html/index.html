@@ -1,0 +1,50 @@
+﻿<div class="alerm-container" ng-controller="alermIdx">
+    <div class="center-container">
+    	<div class="search-form form-inline form-group" ng-show="form.show()">
+    			<label class="col-sm-2">告警状态</label>
+    			<div class="col-sm-2">
+	    			<div dict-select ng-model='form.data' dict-data="dictData.alarm_type"  dict-value-name="alarmType">
+        		</div>
+	    		</div>
+	    		<label class="col-sm-4 btn-group">
+	    			<a class="btn btn-primary" ng-click="form.query()">查询</a>
+	    			<a class="btn" ng-click="form.reset()">重置</a>
+	    		</label>
+    	</div>
+    	<div class="clearfix"></div>
+    	<div class="button-bar">
+    		<a class="btn btn-primary" ng-click="openOpDlg()">批量处理</a>
+    		<a class="btn pull-right" ng-click="form.searchChange()">{{form.showSearch?"隐藏":"显示"}}查询</a>
+    	</div>
+    	<div grid-table style="padding:5px 20px;"
+    		 data-widths="60,100,150,100,160,100,100,100,100,100,160,150,100"
+    		 data-text="checkbox,plateNo,orgName,alarmStatus_,alarmTime,alermDurationTime,alarmType_,contactsName,contactsPhone,alarmDetail,disposeTime,disposeInfo,op"
+    		 data-format='{"alarmTime":"date|yyyy-MM-dd hh:mm:ss","disposeTime":"date|yyyy-MM-dd hh:mm:ss"}'
+    		 on-handle="gridRow(row)"
+    		 data-grid="gridObj(grid)"
+    		 data-outheight="113"
+    		 data-loadurl="{{alermPageUrl}}"
+    		 on-events="gridALink(name,item)">
+    		<table>
+					<tbody>
+						<tr>
+	  					<td><input type="checkbox"/></td>
+	  					<td>车牌号</td>
+	  					<td>所属企业</td>
+	  					<td>告警状态</td>
+	  					<td>报警时间</td>
+	  					<td>报警持续(秒)</td>
+	  					<td>报警类型</td>
+	  					<td>联系人姓名</td>
+	  					<td>联系人电话</td>
+	  					<td>报警详情</td>
+	  					<td>处理时间</td>
+	  					<td>处理意见</td>
+	  					<td>操作</th>
+	  				</tr>
+					</tbody>
+				</table>
+    	</div>
+    	
+    </div>
+</div>

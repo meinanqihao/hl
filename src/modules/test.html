@@ -1,0 +1,16 @@
+var app = angualr.module("app",['a','b']);
+
+
+
+//controll.js
+
+var app = require("../app.js");
+
+app.controller("name",["a","b",function(a,b){
+
+}]);
+
+//index.js
+
+var module = angular.module("xxxx",[]).
+controller("name",require("../"))

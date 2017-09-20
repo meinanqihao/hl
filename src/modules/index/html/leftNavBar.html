@@ -1,0 +1,25 @@
+<!--左侧导航栏-->
+<script type="text/ng-template" id="nodes_renderer.html">
+    <div  class="tree-node tree-node-content level-{{depth}}" ng-mouseover="mouseover(item)" ng-mouseout="mouseout(item)" style="text-indent:{{25*depth}}px;" ng-click="creatNav(item)"
+     ng-class="{'active':isLeftActive(item.active)}">
+    		<div class="active-clz level-{{depth}}"></div>
+        <span class="{{item.icon}}"></span>
+        {{item.text}}
+        <a  ng-if="item.items && item.items.length > 0" data-nodrag >
+            <span class="glyphicon2" ng-class="{'icon-arrow-down': collapsed,'icon-arrow-up': !collapsed}"></span>
+        </a>
+    </div>
+    <ol class="angular-ui-tree-nodes" ng-if="item.items!=null&&item.items.length>0" ng-class="{hidden: isOpen(item.isOpen)}" ng-init="mm=depth">
+        <li ng-repeat="item in item.items track by $index" class="angular-ui-tree-nodes" ng-init="depth=mm+1" ng-include="'nodes_renderer.html'"></li>
+    </ol>
+</script>
+
+<div class="left-nav-bar">
+    <div class="col-sm-12">
+        <div class="angular-ui-tree">
+            <ol class="angular-ui-tree-nodes" ng-model="leftNavlist">
+                <li ng-repeat="item in leftNavlist track by $index" class="angular-ui-tree-node" ng-init="depth=1" ng-include="'nodes_renderer.html'"></li>
+            </ol>
+        </div>
+    </div>
+</div>

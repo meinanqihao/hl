@@ -1,0 +1,28 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": {
+        "currentPage": 99, 
+        "pageTotal": 16, 
+        "pageSize": 80, 
+        "itemCount": 32, 
+        "list": [
+            {
+                "unitUuid": "mock", 
+                "unitName": "mock", 
+                "orgUuid": "mock", 
+                "orgName": "mock", 
+                "orgCode": "mock", 
+                "orgType": "mock", 
+                "orgType_": "mock", 
+                "province": "mock", 
+                "city": "mock", 
+                "county": "mock", 
+                "createDate": "mock", 
+                "parentOrgUuid": "mock", 
+                "version": 19
+            }
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": [
+        {
+            "terminalModelNo": 90
+        }
+    ]
+}

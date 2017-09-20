@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+node_modules/
+dist/js/
+dist/css/
+nginx-1.13.0/logs/
+nginx-1.13.0/temp/
+nginx-1.13.0/conf/nginx.conf
+/dist/index.html
+/dist/login.html

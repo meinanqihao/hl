@@ -1,0 +1,6 @@
+<ol class="tab-menus">
+	<li ng-repeat="tab in navListArr" class="tab-item">
+		<a href ng-click="selectTab($index,tab.id)" ng-class="{'border-none':$index==0,'active':isActive(tab.id)}">{{tab.tagName}}</a>
+		<div class="tab-close" ng-class="{'closable':tab.closable}" ng-click="handelNav($index)"></div>
+	</li>
+</ol>

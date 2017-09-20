@@ -1,0 +1,28 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{org.title}}企业</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="form-inline form-group">
+  			<label class="col-sm-2">企业编号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="org.orgCode"/>
+  			</div>
+  			<label class="col-sm-2">企业名称</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="org.orgName"/>
+  			</div>
+  			<label class="col-sm-2">所属省份</label>
+  			<div class="col-sm-4">
+  				<div area-select class="area-select-input" ng-model="org" area-param-names="province:city:county"></div>
+  			</div>
+  			<label class="col-sm-2">所属管理单位</label>
+  			<div class="col-sm-4">
+  				<input type="text" typeahead-append-to-body="true"
+				 uib-typeahead="mm as mm.agentName for mm in searchMm($viewValue)"  class="form-control" ng-model="mm"/>
+  			</div>
+  	</div>
+</div>
+<div class="modal-footer">
+    <button class="btn" ng-click="cancel()">取消</button>
+    <button class="btn btn-primary" ng-click="ok()">确认</button>
+</div>

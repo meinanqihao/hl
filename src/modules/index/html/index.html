@@ -1,0 +1,23 @@
+<div class="indexSection">
+    <div class="container">
+        <!--头部-->
+        <div ng-include=" '/modules/index/html/header.html' ">
+        </div>
+        <div class="index-container">
+            <div class="pull-left-menu" ng-style="style()" resize-height="50">
+                <div ng-include=" '/modules/index/html/leftNavBar.html' ">
+                </div>
+            </div>
+            <div class="pull-right-menu right-nav">
+                <div class="right-tabs">
+                    <div ng-include="'/modules/index/html/rightTabs.html'"></div>
+                </div>
+                <div class="index-container">
+                    <div ng-style="style()" resize-height="113">
+                    	<div class="tab-content" ng-repeat="tab in navListArr" ng-class="{'active':isActive(tab.id)}" ng-include="tab.tabUrl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

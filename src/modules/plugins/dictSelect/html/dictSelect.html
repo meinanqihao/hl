@@ -1,0 +1,8 @@
+<div ui-select ng-model="data.selected" theme="bootstrap">
+    <div ui-select-match placeholder="请选择...">
+        {{ngModel[dictDisplayName]}}
+    </div>
+    <div ui-select-choices repeat="item in dictData" ng-click="selectDictItem($event);">
+        <div  once-text="item.itemName"></div>
+    </div>
+</div>

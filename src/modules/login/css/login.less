@@ -1,0 +1,95 @@
+﻿html,body {
+  *{font-family: "微软雅黑"};
+  a {
+    text-decoration: none;
+    outline: none;
+  }
+  padding:0;
+  margin:0px;
+  width:100%;
+  height:100%;
+}
+div[ui-view]{
+  width:100%;
+  height:100%;
+}
+.login-all {
+	background-image: url(../images/loading-bg-1920.png);
+	height:100%;
+  .top{
+	   background-color: #8FB1FF;
+	   height: 120px;
+  	 > div{
+				max-width:1440px;
+				margin:0 auto;
+				line-height: 120px;
+				font-size: 32px;
+	      img {
+	      	margin:0 30px 0 95px;
+	        width: 62px;
+	        height: 60px;
+	      }
+		  }
+  }
+	.main{
+		overflow:hidden;
+		.login-box{
+			max-width:1440px;
+			margin:0 auto;
+			position:relative;
+			.box-left{
+				top:100px;
+				background-image: url(../images/loading.png);
+		    width: 562px;
+		    height: 458px;
+		    display: inline-block;
+		    position:absolute;
+			}
+			.box-main{
+				float:right;
+				margin-top:160px;
+				width:360px;
+				height:350px;
+				background-color:white;
+				margin-right:10%;
+				> div{
+					text-align: center;
+			    margin: 40px;
+			    font-size: 20px;
+			    font-weight: bold;
+				}
+				form.login{
+					
+					width:70%;
+					margin:auto;
+					> div{
+						margin:30px 0;
+					}
+					.input-group-addon{
+						background-color:#DADDE5;
+						span{
+							color:white;
+							font-size:18px;
+						  line-height: 28px;
+						}
+					}
+					.input-name{
+						font-size: 16px;
+						height: 42px;
+					}
+					.btn{
+						background-color:#2693FF;
+						width:100%;
+						line-height:28px;
+						font-size:20px;
+					}
+				}
+			}
+		}
+	
+	
+	}
+	.index-page-bottom{
+		margin-top:40px;
+	}
+}

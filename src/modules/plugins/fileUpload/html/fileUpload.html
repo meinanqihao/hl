@@ -1,0 +1,22 @@
+<form  class="upload-file-link"  ng-style="{display:needUploadFiles.needShow?'inline-block':'none'}" ng-repeat="needUploadFiles in needUploadingFiles" once-id="'form'+needUploadFiles.uniqueId"
+  action="{{getUploadAction(needUploadFiles.uniqueId)}}"
+  method="post" enctype="multipart/form-data" target="{{frameName}}">
+  <input type="hidden" name="file_upload_mode" ng-value="attrs.fileUploadMode">
+  <input type="hidden" name="get_all_file" value="false">
+  <input type="hidden" name="upload_id" ng-value="needUploadFiles.uniqueId">
+  <input type="hidden" name="file_pre" ng-value="attrs.fileUploadPrefix">
+  <input type="hidden" name="file_group_id" ng-value="uploadGroupId">
+  <div class="upload-file-link">
+      <span >上传</span>
+      <input type="file" name="upload-file" class="upload-file" onchange="angular.element(this).scope().uploadFile(this);" ng-show="needUploadFiles.needShow"></div>
+  </div>
+</form>
+
+
+<div ng-repeat="oneFile in allFiles" class="upload-file-list" >
+  <span class="delete-file" ng-click="deleteFile(this);">x</span>
+  <img  once-src="oneFile.fileSrc" >
+</div>
+<div ng-repeat="needUploadFile in needUploadingFiles" ng-show="!needUploadFile.needShow" once-html = " '上传中<br>' + needUploadFile.fileName" once-title = "needUploadFile.fileName"  class="need-upload-file-list" >
+
+</div>

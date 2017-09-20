@@ -1,0 +1,11 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": [
+        {
+            "agentUuid": 42, 
+            "agentName": 79
+        }
+    ]
+}

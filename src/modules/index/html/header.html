@@ -1,0 +1,17 @@
+<div class="index-header">
+        <div class="icon"></div>
+        <div class="index-title">北斗后台管理系统</div>
+        
+        <div class="user-name">
+	        <div class="btn-group" uib-dropdown is-open="status.isopen">
+			      <button id="single-button" type="button" class="btn" uib-dropdown-toggle ng-disabled="disabled">
+			        {{loginUser.loginName}}<span class="caret"></span>
+			      </button>
+			      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+			        <li role="menuitem"><a href="javascript:void(0);" ng-click="loginOut()">退出</a></li>
+			        <li role="menuitem"><a href="javascript:void(0);" ng-click="openPwdDlg()">修改密码</a></li>
+			      </ul>
+			    </div>
+		    </div>
+			  <div class="alerm-btn" ng-click="goAlerm()">车辆报警<span>{{alermTotal}}</span></div>
+</div>

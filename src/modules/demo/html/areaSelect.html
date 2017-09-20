@@ -1,0 +1,16 @@
+<H1>省市县选择器</H1>
+<div class="demo">
+<div class="area-select-demo">
+<span>省市县控件的大小由area-select指令所在的div决定,need-count:false 不显示区</span><br>
+<span>area-param-names：设置省市县对应的属性的名称，以冒号分隔。<br>
+    比如：area-param-names="provinceName:cityName:countyName"，说明在数据里面，省的字段名是provinceName，市是cityName，县是countyName。名字可自定义</span>
+<div area-select class="div1" need-county="false" ng-model='testModel2' area-param-names="provinceName:cityName:countyName">
+</div>
+
+<div area-select class="div2"  ng-model='testModel1'>
+</div>
+<input type="button" class="btn btn-success" value="取值" ng-click="getAreaValue();">
+    <input type="button" class="btn btn-success" value="设置值" ng-click="setAreaValue();">
+
+</div>
+</div>

@@ -1,0 +1,12 @@
+<div class="modal-body" id="modal-body">
+    <div class="toaster-container">
+        <div class="toaster-comment" ng-bind-html="data.content">
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <div class="toaster-confirm-button">
+        <input type="button" class="btn btn-default  btn-lg" ng-click="cancel();" value="取消">
+        <input type="button" class="btn btn-success  btn-lg" ng-click="ok(); " value="确定">
+    </div>
+</div>

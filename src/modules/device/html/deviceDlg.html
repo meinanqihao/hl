@@ -1,0 +1,41 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{vechile?"修改":"新增"}}设备</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="form-inline form-group">
+  			<label class="col-sm-2">终端编号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="device.terminalId"/>
+  			</div>
+  			<label class="col-sm-2">终端型号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="device.terminalModelNo"/>
+  			</div>
+  			<label class="col-sm-2">卡号</label>
+  			<div class="col-sm-4">
+  				<input type="text" class="form-control" ng-model="device.simNo"/>
+  			</div>
+  			<label class="col-sm-2">制造商</label>
+  			<div class="col-sm-4">
+  				<div dict-select ng-model='device' dict-data="dictData.manufacture"  dict-value-name="manufactureId"></div>
+  			</div>
+  			<label class="col-sm-2">车牌号</label>
+  			<div class="col-sm-4">
+  				<input type="text" typeahead-append-to-body="true"
+				 		uib-typeahead="mm as mm.plateNo for mm in searchVehicle($viewValue)"  class="form-control" ng-model="vehicle"/>
+  			</div>
+  			<label class="col-sm-2">所属企业</label>
+  			<div class="col-sm-4">
+  				<input type="text" typeahead-append-to-body="true"
+				 		uib-typeahead="mm as mm.orgName for mm in searchOrg($viewValue)"  class="form-control" ng-model="org"/>
+  			</div>
+  			<label class="col-sm-2">所属地址</label>
+  			<div class="col-sm-4">
+  				<div area-select class="area-select-input" ng-model="device" area-param-names="province:city:county"></div>
+  			</div>
+  	</div>
+</div>
+<div class="modal-footer">
+    <button class="btn" ng-click="cancel()">取消</button>
+    <button class="btn btn-primary" ng-click="ok()">确认</button>
+</div>

@@ -1,0 +1,10 @@
+<H2>select<a href="https://github.com/angular-ui/ui-select">参考示例</a></H2>
+
+<div ui-select ng-model="pepoles.select" theme="bootstrap">
+  <div ui-select-match placeholder="请选择...">
+    {{$select.selected.name}}
+  </div>
+  <div ui-select-choices repeat="person in pepoles.select ">
+	  <div once-text="person.name"></div>
+	</div>
+</div>

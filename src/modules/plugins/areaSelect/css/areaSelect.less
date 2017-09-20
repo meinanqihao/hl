@@ -1,0 +1,159 @@
+.area-select{
+  vertical-align: middle;
+
+  .city-picker-input{
+    cursor: pointer;
+    height: 95%;
+    width:100%;
+    line-height: inherit;
+    border:0;
+    padding:0;
+  }
+
+  .city-picker-span {
+    position: relative;
+    display: block;
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #ccc;
+    cursor: pointer;
+    padding-left: 7px;
+    overflow: hidden;
+
+    > .placeholder {
+      color: #aaa;
+    }
+
+    > .arrow {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      width: 10px;
+      margin-top: -3px;
+      height: 5px;
+    }
+
+    .focus,.open {
+      border-color: #46A4FF;
+
+      > .arrow {
+        background-position: -10px -10px;
+      }
+    }
+
+    > .title {
+        > span {
+          color: #333;
+          padding: 5px;
+          border-radius: 3px;
+          :hover {
+            background-color: #f1f8ff;
+          }
+        }
+    }
+
+  }
+
+  .city-picker-dropdown {
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    z-index: 999999;
+    min-width: 330px;
+    margin-bottom: 20px;
+    width: 320px;
+    display: block;
+    position:absolute;
+  }
+  .city-select-wrap {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  }
+  .city-select-tab{
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 13px;
+
+    >a {
+      display: inline-block;
+      padding: 8px 32px;
+      /*border-left: 1px solid #ccc;*/
+      border-bottom: 1px solid transparent;
+      color: #4D4D4D;
+      text-align: center;
+      outline: 0;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 14px;
+      margin-bottom: -1px;
+    }
+    >a.active{
+      background: #fff;
+      border-bottom: 2px solid #46A4FF;
+      color: #46A4FF;
+    }
+
+    >a:first-child {
+      border-left: none;
+    }
+  }
+
+  .city-select-content {
+    min-height: 10px;
+    background-color: #fff;
+    padding: 10px 15px;
+    border:1px solid #eee;
+  }
+
+  .city-select {
+    font-size: 13px;
+    dl {
+      line-height: 2;
+      clear: both;
+      padding: 3px 0;
+      margin: 0;
+    }
+
+    dt {
+      position: absolute;
+      width: 2.5em;
+      font-weight: bold;
+      text-align: right;
+      line-height: 2;
+    }
+
+    dd {
+      margin-left: 3em;
+      line-height: 2;
+    }
+
+    .province dd {
+      margin-left: 3em;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0 10px;
+      outline: 0;
+      white-space: nowrap;
+      margin-right: 2px;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+
+      :hover, :focus{
+        background-color: #46A4FF;
+        border-radius: 2px;
+        color: #fff;
+      }
+
+      .active {
+        background-color: #46A4FF;
+        color: #fff;
+        border-radius: 2px;
+      }
+    }
+  }
+
+}

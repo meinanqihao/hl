@@ -1,0 +1,17 @@
+<div class="input-group">
+  <input type="text" class="form-control form-date-region"  current-text="今天"  clear-text="清空" close-text="关闭" uib-datepicker-popup="{{dateRegion.format}}"
+  ng-model="dateBegin" is-open="dateRegion.beginOpened"
+  datepicker-options="dateRegion.dateBeginOptions" close-text="关闭" alt-input-formats="dateRegion.altInputFormats"/>
+  <span class="input-group-btn">
+    <button type="button" class="btn btn-default" ng-click="openBegin();"><i class="glyphicon glyphicon-calendar"></i></button>
+  </span>
+</div>
+<i class="glyphicon glyphicon-minus minus"></i>
+<div class="input-group date-region-end">
+  <input type="text" class="form-control form-date-region"  current-text="今天"  clear-text="清空" close-text="关闭" uib-datepicker-popup="{{dateRegion.format}}"
+  ng-model="dateEnd" is-open="dateRegion.endOpened"
+  datepicker-options="dateRegion.dateEndOptions" close-text="关闭" alt-input-formats="dateRegion.altInputFormats"/>
+  <span class="input-group-btn">
+    <button type="button" class="btn btn-default" ng-click="openEnd();"><i class="glyphicon glyphicon-calendar"></i></button>
+  </span>
+</div>

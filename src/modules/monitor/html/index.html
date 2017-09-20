@@ -1,0 +1,119 @@
+﻿<!--左侧导航栏-->
+<script type="text/ng-template" id="nodes_car.html">
+    <div  class="tree-node tree-node-content" style="text-indent:{{20*depth}}px;" 
+     ng-class="{'active':isLeftActive(item.active),'selected':item.isSelected}">
+        <span ng-if="item.orgType!=null" ng-class="{'shareicon-pull-down':item.isOpen,'shareicon-pulldown-02':!item.isOpen}"
+         ng-click="tree.toggleOpn(item)"></span>
+        <span ng-if="item.orgType==null" ng-class="{'shareicon-check-box':!item.isSelected,'shareicon-check-box-2':item.isSelected}" ng-click="tree.toggleSelected(item)"></span>
+        <span class="tree-text" ng-click="tree.toggleOpn(item)">{{item.orgName}}</span>
+    </div>
+    <ol class="angular-ui-tree-nodes" ng-if="item.items!=null&&item.items.length>0" ng-init="mm=depth" ng-class="{hidden: tree.isOpen(item.isOpen)}">
+        <li ng-repeat="item in item.items" class="angular-ui-tree-nodes" ng-init="depth=mm+1" ng-include="'nodes_car.html'"></li>
+    </ol>
+</script>
+<div class="monitorIdx-container" ng-controller="monitorIdx">
+	<div class="map-container" style="margin-right:{{tree.mapMargin}};">
+		<!-- 工具条 -->
+		<div class="tool-bar">
+			<span>全部：3      在线：2      离线：1</span>
+			<span ng-click="mapTools.allScreen($event)"><span class="beidou-fullscreen icon"></span>{{mapTools.screenOp}}</span>
+			<span ng-click="mapTools.startRang()"><span class="beidou-measure icon"></span>测量</span>
+		</div>
+		<!-- 搜索框 -->
+		<div class="search-bar">
+			<input type="text" ng-model="asyncSelected" typeahead-append-to-body="true" typeahead-on-select="selectCar($item)"
+				placeholder="搜索车牌号/联系人/手机号"
+				 uib-typeahead="address.remark for address in search($viewValue)" class="form-control" ng-model="selectCarItem"/>
+		</div>
+		<!-- 车辆详细信息 -->
+		<div class="detail-info" ng-show="isTrue(showDetail)">
+			<span class="shareicon-Close" ng-click="carPanel.hide()"></span>
+			<div class="title">车辆信息</div>
+			<div class="car-info">车牌号:{{carInfo.plateNo}}</div>
+			<div class="car-info">车辆类型:{{carInfo.vechileType_}}</div>
+			<div class="car-info">所属公司:{{carInfo.companyName}}</div>
+			<div class="car-info">联系人:{{carInfo.contactsName}}({{carInfo.contactsPhone}})</div>
+			<div class="car-info">上报时间:{{carInfo.lastReportTime_}}</div>
+			<br/>
+			<div class="title">报警信息</div>
+			<div class="car-info" ng-class="{'active':carInfo.alermComments}">{{carInfo.alermComments_}}</div>
+			<br/>
+			<div class="title">历史轨迹</div>
+			<div class="car-info">从开始到结束不能超过24小时</div>
+			<div class="col-md-1" style="padding:0px;line-height:34px;">
+				从
+			</div>
+			<div class="col-md-7" style="padding:0px;">
+        <p class="input-group">
+          <input type="text" class="form-control" datepicker-append-to-body="true" uib-datepicker-popup 
+          	ng-model="carPanel.startDate" is-open="sopened" current-text="今天"  clear-text="清空" close-text="关闭" close-text="Close" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="sopened=!sopened;"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+      </div>
+			<div class="col-md-4" style="padding:0 0 0 5px;">
+        <select class="form-control" ng-model="carPanel.sTime"><option ng-repeat="opt in carPanel.times" value="{{opt}}">{{opt}}</option></select>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-md-1" style="padding:0px;line-height:34px;">
+				到
+			</div>
+			<div class="col-md-7" style="padding:0px;">
+        <p class="input-group">
+          <input type="text" class="form-control" datepicker-append-to-body="true" uib-datepicker-popup 
+          	ng-model="carPanel.endDate" is-open="eopened" current-text="今天"  clear-text="清空" close-text="关闭" close-text="Close" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="eopened=!eopened;"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+      </div>
+			<div class="col-md-4" style="padding:0 0 0 5px;">
+        <select class="form-control" ng-model="carPanel.eTime"><option ng-repeat="opt in carPanel.times" value="{{opt}}">{{opt}}</option></select>
+      </div>
+      <button type="button" class='btn btn-default' style="float:right;margin:10px 0;" ng-click="carPanel.searchHistory()">查询</button>
+      <div class="clearfix"></div>
+      <div ng-show="isTrue(carPanel.historyShow)">
+				<div uib-progressbar value="player.progress" max="100"></div>
+				<div class="btn-group">
+	        <label class="btn beidou-play" ng-click="player.play()" ng-model="player.btnStatus" uib-btn-radio="'play'"></label>
+	        <label class="btn beidou-suspend" ng-click="player.suspend()" ng-model="player.btnStatus" uib-btn-radio="'suspend'"></label>
+	        <label class="btn beidou-end" ng-click="player.end()" ng-model="player.btnStatus" uib-btn-radio="'end'"></label>
+	        <label class="btn beidou-speed-reduction" ng-click="player.red()"></label>
+	        <label class="btn beidou-speed-up" ng-click="player.up()"></label>
+	        <label style="margin: 0 5px;line-height: 28px;">×{{player.speed}}</label>
+		    </div>
+		  </div>
+	    
+		</div>
+		<div data-amap-comp ng-model="amap" class="amap-element" data-loaded="amapLoaded(mapObj)" data-mark-click="markClick(data)"></div>
+	</div>
+	<!-- 右边树结构 -->
+	<div class="vechile-tree angular-ui-tree" style="width:{{tree.treeWidth}};">
+		<div class="split" ng-class="{'shareicon-pull-up-02':!isTrue(tree.showTree),'shareicon-pulldown-02':isTrue(tree.showTree)}" ng-click="tree.toggle();"></div>
+		<ol class="angular-ui-tree-nodes" ng-model="vechileList" style="margin-top:20px;" ng-show="isTrue(tree.showTree)">
+        <li ng-repeat="item in vechileList" class="angular-ui-tree-node" ng-init="depth=1" ng-include="'nodes_car.html'"></li>
+    </ol>
+	</div>
+	
+</div>
+
+<div ng-drag="false" ng-drag-stop="dragWarnDlg($event)" class="warning-events" id='warningEvents'>
+	<div class="dlg-title">
+		<span ng-drag-handle>车辆报警({{alerm.totalItems}})</span>
+		
+		<span ng-class="{'shareicon-pack-up-3':!showList,'shareicon-pulldown-3':showList}" ng-click="toggleWarnDlg(this)">
+	  </span>
+	</div>
+	
+	<ol class="warning-list" ng-class="{'active':showList}">
+		<li  ng-if="alerm.totalItems==0" style="text-align:center;">无待处理报警</li>
+		<li ng-repeat="item in alermList" class="alerm-row{{$index%2}}">
+			【{{item.alarmType}}】<font ng-click="alerm.toCar(item)" class="alerm-link">{{item.plateNo}}</font>,{{item.contactsName}},
+			{{item.contactsPhone}}<span class="warn-op" ng-click="alerm.op(item)">处理</span><span>{{item.formatDt}}</span>
+			</li>
+	</ol>
+	<ul ng-show="isTrue(showList)" uib-pagination boundary-links="false" previous-text="&lsaquo;" next-text="&rsaquo;"
+			ng-change="alerm.selectPage(page)" max-size="7" boundary-link-numbers="true" class="events-paging"
+			total-items="alerm.totalItems" items-per-page="5" ng-model="alerm.currentPage"></ul>
+</div>

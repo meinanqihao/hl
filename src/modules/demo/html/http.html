@@ -1,0 +1,13 @@
+<div class="demo-request">
+    <div>get请求url</div>
+    <input class="url-input" type="text" ng-model="$parent.getRequestUrl">
+    <div>post请求url</div>
+    <input class="url-input" type="text" ng-model="$parent.postRequestUrl">
+    <div>请求参数(key和value都需要双引号)</div>
+    <textarea class="demo-request-textarea" ng-model="$parent.requestParam">
+    </textarea>
+    <div>响应：</div>
+    <div class="demo-request-result" ng-bind="requestResult"></div>
+    <input class="btn btn-success" type="button" value="发送get请求" ng-click="sendGetRequest();"/>
+    <input class="btn btn-success" type="button" value="发送post求" ng-click="sendPostRequest();"/>
+</div>

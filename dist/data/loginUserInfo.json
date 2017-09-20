@@ -1,0 +1,23 @@
+﻿{
+    "success": true, 
+    "body": {
+        "userCode": "mock", 
+        "loginName": "mock", 
+        "memberType": {
+            "code": "mock", 
+            "text": "mock", 
+            "name": "mock"
+        }, 
+        "memberClassifyEnum": {
+            "code": "mock", 
+            "text": "mock", 
+            "name": "mock"
+        }, 
+        "userTypeEnum": {
+            "code": "mock", 
+            "text": "mock", 
+            "name": "mock"
+        }, 
+        "urlAuthMap": { }
+    }
+}

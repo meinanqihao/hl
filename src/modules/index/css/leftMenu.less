@@ -1,0 +1,65 @@
+.indexSection {
+  //左侧导航栏
+  .left-nav-bar {
+  	background-color:#313644;
+    width: 200px;
+    font-size: 16px;
+    color: #9DABC5;
+    font-family: '微软雅黑';
+    > div{
+    	padding:0px;
+    }
+    div.tree-node{
+			font-size:16px;
+      width: 100%;
+      cursor: pointer;
+      position:relative;
+      color:#A3B1CC;
+      &.active{
+  			background-color:#2A303C;
+  			color:white;
+     		> .active-clz.level-1{
+    			height:100%;
+    			width:3px;
+    			background-color:#6370FD;
+    			left:0;
+    		}
+      }
+      > .active-clz{
+      	position:absolute;
+    		top:0;
+      }
+      
+      
+      &.level-1{
+      	line-height:72px;
+      	font-weight:bold;
+      }
+      &.level-2{
+      	line-height:55px;
+      }
+    }
+    .mainNav {
+      &:hover {
+        color: #555;
+      }
+    }
+    .subNav {
+      &:hover {
+        color: #fff;
+      }
+    }
+    .glyphicon2 {
+      position: absolute;
+      right: 5px;
+      font-family: 'oil-icon';
+      -webkit-font-smoothing: antialiased;
+      color: #ccc;
+    }
+  }
+  
+  
+	.angular-ui-tree-nodes .angular-ui-tree-nodes{
+		padding-left:0px;
+	}
+}

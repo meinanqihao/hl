@@ -1,0 +1,24 @@
+﻿<div>
+	<div class="grid-thead" ng-transclude></div>
+	<div class="grid-body" resize-height="{{outheight+80}}" disable-resize="{{resizable||false}}" ng-style="style()">
+		<h3 ng-hide="isBoolean(showData)">{{decription}}</h1>
+		<table ng-show="isBoolean(showData)">
+			<tbody>
+				<tr ng-repeat="row in dataRows" class="row-{{$index%2}}" ng-init="outerIndex = $index">
+					<td ng-repeat="col in cols" class="body-info" style="width:{{col.w}}px;text-align:center;" title="{{row[col.name]}}">
+						<input type="checkbox" ng-if="col.name=='checkbox'" ng-model="row.checked"/>
+						<input type="radio" ng-if="col.name=='radio'" name="{{radioName}}" ng-click="radioSelect(outerIndex)"/>
+						<div ng-if="col.name!='checkbox'&&col.name!='radio'" style="width:{{col.w}}px;text-align:center;" ng-bind-html="row[col.name]" name="{{outerIndex}}">
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="grid-tfoot">
+		<ul uib-pagination boundary-links="false" previous-text="&lsaquo;" next-text="&rsaquo;"
+			ng-change="selectPage(page)" max-size="7" boundary-link-numbers="true"
+			total-items="totalItems" items-per-page="20" ng-model="currentPage"></ul>
+			<span>显示<font>{{currentPage}}</font>/<font>{{pageTotal}}</font>页,当前页记录:<font>{{itemCount}}</font>条</span>
+	</div>
+</div>

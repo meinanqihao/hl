@@ -1,0 +1,13 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": [
+        {
+            "orgUuid": 4, 
+            "orgType": "mock", 
+            "orgName": 99, 
+            "orgNamePath": 33
+        }
+    ]
+}

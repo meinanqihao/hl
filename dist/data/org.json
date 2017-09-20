@@ -1,0 +1,19 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": [
+        {
+            "orgUuid": "1", 
+            "orgName": "浙江省", 
+            "parentOrgUuid": "0", 
+            "orgType": "1"
+        },
+        {
+            "orgUuid": "2", 
+            "orgName": "AA公司", 
+            "parentOrgUuid": "1", 
+            "orgType": "1"
+        }
+    ]
+}

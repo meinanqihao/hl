@@ -1,0 +1,20 @@
+<H1>日期区间</H1>
+<span>
+  <strong>用法：</strong><br>
+  begin-name：起始日期在ng-model里对应的参数名<br>
+  end-name：结束日期在ng-model里对应的参数名<br>
+</span>
+<div class="date-region-demo">
+  <div date-region  class="region1" ng-model="dateRegion" begin-name="testBegin1" end-name="testEnd1"></div>
+</div>
+<div class="date-region-demo">
+  <div date-region  class="region2" ng-model="dateRegion" begin-name="testBegin2" end-name="testEnd2"></div>
+</div>
+<div class="date-region-demo">
+  <div date-region  class="region3" ng-model="dateRegion" begin-name="testBegin3" end-name="testEnd3"></div>
+</div>
+<span>第一个日期区间的值</span>
+<input type="input" ng-value=" '' + dateRegion.testBegin1 + ':' + dateRegion.testEnd1" style="width:250px;">
+
+<input type="button" ng-click="setDateRegion();" class="btn btn-success" value="设置日期区间的值">
+<input type="button" ng-click="clearDateRegion();" class="btn btn-success" value="清空">

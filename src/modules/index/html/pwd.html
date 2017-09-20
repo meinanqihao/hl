@@ -1,0 +1,23 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">修改密码</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="form-inline form-group">
+  			<label class="col-sm-4">原密码</label>
+  			<div class="col-sm-8">
+  				<input type="password" class="form-control" ng-model="oPwd"/>
+  			</div>
+  			<label class="col-sm-4">新密码</label>
+  			<div class="col-sm-8">
+  				<input type="password" class="form-control" ng-model="nPwd"/>
+  			</div>
+  			<label class="col-sm-4">新密码确认</label>
+  			<div class="col-sm-8">
+  				<input type="password" class="form-control" ng-model="cPwd"/>
+  			</div>
+  	</div>
+</div>
+<div class="modal-footer">
+    <button class="btn" ng-click="cancel()">取消</button>
+    <button class="btn btn-primary" ng-click="ok()">确认</button>
+</div>

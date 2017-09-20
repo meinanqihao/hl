@@ -1,0 +1,42 @@
+.org-container{
+	height:100%;
+	width:100%;
+	position:relative;
+	.left-org-tree{
+		height:100%;
+		width:250px;
+		position:absolute;
+		background-color:#F7FAFF;
+		ol{list-style: none;}
+		> ol{
+			margin-top:20px;
+			.tree-node-content{
+				line-height:32px;
+			}
+			.selected > span.tree-text{
+				background-color: #59ADEB;
+		    color: white;
+		    padding: 3px;
+			}
+		}
+	}
+	.center-container{
+		margin-left:250px;
+		height:100%;
+		.search-form{
+			width:100%;
+			&.form-group{
+				padding-top:12px;
+				> label{
+					line-height:35px;
+					text-align:right;
+					font-size:16px;
+					font-weight:normal;
+					&.btn-group{
+						padding-top: 3px;
+					}
+				}
+			}
+		}
+	}
+}	

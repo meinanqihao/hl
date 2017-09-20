@@ -1,0 +1,9 @@
+<H2>轮播图<a href="https://angular-ui.github.io/bootstrap/">参考示例</a></H2>
+
+<div style="height: 305px">
+  <div uib-carousel active="active" interval="myInterval" no-wrap="false">
+    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id"  >
+      <img once-src="slide.image" style="margin:auto;">
+    </div>
+  </div>
+</div>

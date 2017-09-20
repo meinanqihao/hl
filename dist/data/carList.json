@@ -1,0 +1,13 @@
+﻿{
+    "success": true, 
+    "errorCode": "mock", 
+    "errorMsg": "mock", 
+    "body": [
+        {
+            "vechileUuid": 88, 
+            "plateNo": 49, 
+            "contactsName": "mock", 
+            "contactsPhone": "mock"
+        }
+    ]
+}
